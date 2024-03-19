@@ -3,16 +3,29 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Piškvorky</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="card">
       <header>
-        <img src="uvodni.jpg" alt="Ilustrační obrázek piškvorek" />
+        <img
+          class="card__image"
+          src="uvodni.jpg"
+          alt="Ilustrační obrázek piškvorek"
+        />
       </header>
 
-      <section>
+      <section class="card__main">
         <h1>Piškvorky</h1>
         <p>
           Piškvorky jsou velmi oblíbená společenská hra pro dva hráče. Obvykle
@@ -22,15 +35,19 @@
         </p>
       </section>
 
-      <footer>
-        <a href="https://czechitas-podklady.cz/Piskvorky-pravidla/">
-          <button>Pravidla</button>
+      <nav class="card__nav">
+        <a
+          class="card__link card__link--rules"
+          href="https://czechitas-podklady.cz/Piskvorky-pravidla/"
+          target="_blank"
+        >
+          Pravidla
         </a>
 
-        <a href="index.html">
-          <button>Začít hrát</button>
+        <a class="card__link card__link--action" href="index.html">
+          Začít hrát
         </a>
-      </footer>
+      </nav>
     </div>
   </body>
 </html>
