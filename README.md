@@ -1,16 +1,16 @@
-## DA WEB - samostatné úkoly Piškvorky
+# DA WEB - samostatné úkoly Piškvorky
 
 Tento projekt vznikl v rámci Digitální akademie Web u Czechitas. Slouží k procvičení nabytých znalostí v oblasti HTML, CSS, JS a práce s GITem.
 
-# Zadání:
+# Instrukce:
 
-# Piškvorky
+## Piškvorky
 
 Šablona prázdného projektu pro domácí úkol „Piškvorky“.
 
 Cílem je postupně vytvořit na webu hru Piškvorky na poli 10×10, kterou bude moci hrát jeden hráč proti počítači.
 
-# Zadání
+## Zadání
 
 Na tomto projektu budete pracovat postupně v pěti postupně navazujících úkolech. **Nepředbíhejte**, počkejte vždy na oficiální zadání daného úkolu – pro řešení úkolu potřebujete znalosti z odpovídajících lekcí a řešit úkol napřed by se vám nevyplatilo.
 
