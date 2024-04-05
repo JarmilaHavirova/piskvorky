@@ -144,3 +144,17 @@ body {
   opacity: 0.45;
   cursor: pointer;
 }
+
+.game__square--circle {
+  background-image: url(image/circle-black.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 65%;
+}
+
+.game__square--cross {
+  background-image: url(image/cross-black.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 65%;
+}
