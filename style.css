@@ -145,16 +145,28 @@ body {
   cursor: pointer;
 }
 
-.game__square--circle {
-  background-image: url(image/circle-black.svg);
+.game__square--circle,
+.game__square--cross {
   background-position: center;
   background-repeat: no-repeat;
   background-size: 65%;
+  animation: zoomIn 0.15s;
+}
+
+.game__square--circle {
+  background-image: url(image/circle-black.svg);
 }
 
 .game__square--cross {
   background-image: url(image/cross-black.svg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: 65%;
+}
+
+/* animace */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
