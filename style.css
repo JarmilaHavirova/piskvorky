@@ -145,6 +145,11 @@ body {
   cursor: pointer;
 }
 
+.game__square:disabled {
+  opacity: 1;
+  cursor: default;
+}
+
 .game__square--circle,
 .game__square--cross {
   background-position: center;
