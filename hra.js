@@ -18,7 +18,6 @@ const selectButton = (event) => {
   // vytváření pole(array) symbolů z hracího plánku
   const playingFieldElms = Array.from(fieldSquares);
   const playingFieldSymbols = playingFieldElms.map((square) => {
-    console.log(square.classList);
     if (square.classList.contains("game__square--circle")) {
       return "o";
     } else if (square.classList.contains("game__square--cross")) {
@@ -29,7 +28,7 @@ const selectButton = (event) => {
   });
 
   // hledání vítěze a výpis do alertu
-  const winner = findWinnerRow(playingFieldSymbols);
+  const winner = findWinner(playingFieldSymbols);
   const alertMessage = () => {
     alert(`Vyhrál hráč se symbolem ${winner}`);
     location.reload();
