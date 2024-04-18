@@ -1,4 +1,9 @@
+import { findWinnerMine } from "./findWinnerMine.js";
+
+/*
+původní cizí import
 import { findWinner } from "https://unpkg.com/piskvorky@0.1.4";
+*/
 
 let currentPlayer = "circle";
 
@@ -28,7 +33,7 @@ const selectButton = (event) => {
   });
 
   // hledání vítěze a výpis do alertu
-  const winner = findWinner(playingFieldSymbols);
+  const winner = findWinnerMine(playingFieldSymbols);
   const alertMessage = () => {
     alert(`Vyhrál hráč se symbolem ${winner}`);
     location.reload();
