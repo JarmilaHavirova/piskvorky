@@ -56,11 +56,17 @@ fieldSquares.forEach((square) => {
   square.addEventListener("click", selectButton);
 });
 
-// Úkol 3 - bonus 1 - ověření, zda chce uživatel opravdu restart hry
+// Úkol 3 - bonus 1 - ověření, zda chce uživatel opravdu restart hry + přidáno i na Home tlačítko
+const preventReset = (event) => {
+  if (!confirm("Opravdu chceš začít znovu?")) {
+    event.preventDefault();
+  }
+};
+
 document
   .querySelector(".game__link--restart")
-  .addEventListener("click", function (event) {
-    if (!confirm("Opravdu chceš začít znovu?")) {
-      event.preventDefault();
-    }
-  });
+  .addEventListener("click", preventReset);
+
+document
+  .querySelector(".game__link--home")
+  .addEventListener("click", preventReset);
