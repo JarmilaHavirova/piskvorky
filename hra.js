@@ -7,7 +7,7 @@ import { findWinner } from "https://unpkg.com/piskvorky@0.1.4";
 
 let currentPlayer = "circle";
 
-const selectButton = (event) => {
+const selectButton = async (event) => {
   // target posluchač na změnu hráče a s tím souvisejích symbolů
   event.target.disabled = true;
   if (currentPlayer === "circle") {
@@ -46,6 +46,31 @@ const selectButton = (event) => {
       alert(`Hra skončila nerozhodně :-o`);
       location.reload();
     }, 250);
+  } else {
+    // spouštěč "AI" tahu pro křížek
+    if (currentPlayer === "cross") {
+      // volání API
+      const response = await fetch(
+        "https://piskvorky.czechitas-podklady.cz/api/suggest-next-move",
+        {
+          method: "POST",
+          headers: {
+            "Content-type": "application/json",
+          },
+          body: JSON.stringify({
+            board: playingFieldSymbols,
+            player: "x",
+          }),
+        }
+      );
+
+      // zpracování dat získaných z API
+      const data = await response.json();
+      const { x, y } = data.position;
+      const index = fieldSquares[x + y * 10];
+
+      index.click();
+    }
   }
 };
 
