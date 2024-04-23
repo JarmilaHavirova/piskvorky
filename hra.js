@@ -49,6 +49,11 @@ const selectButton = async (event) => {
   } else {
     // spouštěč "AI" tahu pro křížek
     if (currentPlayer === "cross") {
+      // bonus 5 - první část - blokace tlačítek pro hráče před odehráním "AI"
+      fieldSquares.forEach((fieldSquare) => {
+        fieldSquare.disabled = true;
+      });
+
       // volání API
       const response = await fetch(
         "https://piskvorky.czechitas-podklady.cz/api/suggest-next-move",
@@ -69,6 +74,19 @@ const selectButton = async (event) => {
       const { x, y } = data.position;
       const index = fieldSquares[x + y * 10];
 
+      // bonus 5 - druhá část - odblokování nehraných tlačítek pro hráče po odehráním "AI"
+      fieldSquares.forEach((fieldSquare) => {
+        if (
+          fieldSquare.classList.contains("game__square--circle") ||
+          fieldSquare.classList.contains("game__square--cross")
+        ) {
+          fieldSquare.disabled = true;
+        } else {
+          fieldSquare.disabled = false;
+        }
+      });
+
+      // odkliknutí políčka za "AI"
       index.click();
     }
   }
